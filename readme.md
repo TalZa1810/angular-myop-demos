@@ -131,9 +131,9 @@ The `MyopContainer` component provides a `componentReady` event that you can use
    (componentReady)="onReady($event)"
  />
 ```
-
+In your component class
 ```typescript
-// In your component class
+
 onReady(component: IMyopComponent) {
     // Send messages to the component
     component.send(ChangeTextMessage.create(component.refs.title, this.inputs.name));
