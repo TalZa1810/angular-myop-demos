@@ -14,44 +14,17 @@ This guide explains how to integrate your Angular components with Myop, allowing
 
 There are two ways to expose your Angular components to Myop:
 
-### Option 1: Direct Exposure
+### Direct Exposure
 Use the `expose` function to directly expose your Angular component:
 
 ```typescript
-// Simple approach
-expose(TodoComponent, 'myop-todo');
-```
+import {appConfig} from './app/app.config';
+import {AppComponent} from './app/app.component';
+import {exposeAngularComponent} from "@myop/angular-remote";
 
-### Option 2: Create a Myop Wrapper Component
-
-Create a wrapper component that extends `BaseMyopComponent`:
-
-```typescript
-import { Component, EnvironmentInjector, inject } from "@angular/core";
-import { BaseMyopComponent, MyopContainerComponent } from "@nx-20-ng-19/shared";
-import { TodoComponent } from "./todo.component";
-
-@Component({
-   selector: 'myop-expose-todo',
-   standalone: true,
-   imports: [MyopContainerComponent],
-   template: `
-       <myop-container
-           componentId="ca8c0c4f-d26e-40c8-bf32-19eb104ee710"
-           flowId="1d75e2f9-9a2d-49f1-aeeb-6268921a29fe"
-       />
-   `,
-})
-export class MyopExposeTodoComponent extends BaseMyopComponent {
-   protected override injector = inject(EnvironmentInjector);
-   override componentType = TodoComponent;
-   override tagName = 'myop-todo';
-
-   constructor() {
-      super();
-      this.exposeService.expose(TodoComponent, 'myop-todo', this.injector);
-   }
-}
+exposeAngularComponent(AppComponent, 'test-comp-1', async () => {
+   return appConfig
+}).then();
 ```
 
 ## Creating Myop WebComponents
@@ -68,7 +41,7 @@ Follow these steps to create a Myop WebComponent from your Angular component:
 
 4. Configure your component:
     - Change the loader to "WebComponent"
-    - Enter your component URL (e.g., http://localhost:4400)
+    - Enter your component URL (e.g., http://localhost:4400/main.js)
     - Enter the tag name that you exposed the component with
 
 5. Your Angular component should now appear in the admin panel
@@ -93,9 +66,13 @@ You can integrate Myop components into your Angular application in two ways:
 
 ```typescript
 // Before
+import { TodoComponent } from './todo.component.ts';
+
 { path: 'todo', component: TodoComponent }
 
-// After - Option 1
+// After
+import { MyopContainerComponent } from '@myop/angular';
+
 {
     path: 'todo',
     data: {
@@ -104,42 +81,58 @@ You can integrate Myop components into your Angular application in two ways:
     },
     component: MyopContainerComponent,
 }
-
-// After - Option 2
-{
-    path: 'todo', 
-    component: MyopExposeTodoComponent
-}
 ```
 
 ### Option 2: As a Component in Templates
 
 ```typescript
 // Before
-<my-angular-todo-component />
-    
-// After - Option 1
-<myop-container
-  [injector]="injector"
-  componentId="ca8c0c4f-d26e-40c8-bf32-19eb104ee710"
-  flowId="1d75e2f9-9a2d-49f1-aeeb-6268921a29fe"
-/>
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { TranslocoRootModule } from './transloco-root.module';
+import { TodoComponent } from './todo.component.ts';
 
-// After - Option 2
-<myop-expose-todo />
+@Component({
+   selector: 'app-root',
+   imports: [TodoComponent],
+   template: '<todo-component></todo-component>',
+})
+export class AppComponent {
+ 
+}
+
+    
+// After
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { TranslocoRootModule } from './transloco-root.module';
+import { MyopContainerComponent } from '@myop/angular';
+
+@Component({
+   selector: 'app-root',
+   imports: [MyopContainerComponent],
+   template: `<myop-container
+                  flowId="1d75e2f9-9a2d-49f1-aeeb-6268921a29fe"
+                  componentId="4df90a03-553c-44a3-b153-d0ddccdc0010"/>`
+})
+export class AppComponent {
+
+}
 ```
 
 ## Communication with Angular Components
 
 The `MyopContainer` component provides a `componentReady` event that you can use to communicate with your Angular component:
 
-```typescript
+```html
 <myop-container
-    flowId="49283058-a787-4fa5-b0d2-516b2e6dc5e3"
-    componentId="8c72d29b-c8a0-41cf-b08f-4acca96c7a16"
-    (componentReady)="onReady($event)"
-/>
+   flowId="1d75e2f9-9a2d-49f1-aeeb-6268921a29fe"
+   componentId="4df90a03-553c-44a3-b153-d0ddccdc0010"
+   (componentReady)="onReady($event)"
+ />
+```
 
+```typescript
 // In your component class
 onReady(component: IMyopComponent) {
     // Send messages to the component
