@@ -77,9 +77,9 @@ import { MyopContainerComponent } from '@myop/angular';
     path: 'todo',
     data: {
       componentId: "ca8c0c4f-d26e-40c8-bf32-19eb104ee710",
-      flowId: "1d75e2f9-9a2d-49f1-aeeb-6268921a29fe",
+      flowId: "1d75e2f9-9a2d-49f1-aeeb-6268921a29fe"
     },
-    component: MyopContainerComponent,
+    component: MyopContainerComponent
 }
 ```
 
@@ -101,7 +101,6 @@ export class AppComponent {
  
 }
 
-    
 // After
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
@@ -133,7 +132,6 @@ The `MyopContainer` component provides a `componentReady` event that you can use
 ```
 In your component class
 ```typescript
-
 onReady(component: IMyopComponent) {
     // Send messages to the component
     component.send(ChangeTextMessage.create(component.refs.title, this.inputs.name));
