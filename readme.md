@@ -121,17 +121,30 @@ export class AppComponent {
 
 ## Communication with Angular Components
 
-The `MyopContainer` component provides a `componentReady` event that you can use to communicate with your Angular component:
+The `MyopContainer` component accepts `inputs`, which can include a wide variety of data types. This may consist of simple primitive values, complex objects, functions, and even non-serializable objects.
+
+The `MyopContainer` component also provides a `componentReady` event that you can use to communicate with your Angular component.
 
 ```html
 <myop-container
    flowId="1d75e2f9-9a2d-49f1-aeeb-6268921a29fe"
    componentId="4df90a03-553c-44a3-b153-d0ddccdc0010"
+   [inputs]="someObject"
    (componentReady)="onReady($event)"
  />
 ```
 In your component class
 ```typescript
+
+someObject = {
+   key1: '123',
+   key2: '456',
+   someInputValue : 'testValue',
+   fun1 : ()=>{
+      alert('ffff')
+   }
+}
+
 onReady(component: IMyopComponent) {
     // Send messages to the component
     component.send(ChangeTextMessage.create(component.refs.title, this.inputs.name));
