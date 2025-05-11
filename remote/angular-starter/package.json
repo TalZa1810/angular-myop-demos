@@ -76,7 +76,7 @@
     "tslib": "^2.6.3",
     "zone.js": "^0.15.0",
     "@myop/sdk": "^0.1.17",
-    "@myop/angular-remote" : "^0.0.6"
+    "@myop/angular-remote" : "^0.0.8"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^19.2.0",
