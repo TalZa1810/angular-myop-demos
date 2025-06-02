@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+.myop-demo-container {
+  display: flex;
+  background: #8B5CF6;
+  border-radius: 3px;
+  padding: 0;
+  min-height: 296px;
+  width: 100%;
+  max-width: 849px;
+  align-items: stretch;
+  color: #fff;
+  font-family: 'Plus Jakarta Sans'; 
+}
+
+.myop-demo-sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  width: 124px;
+  gap: 12px;
+}
+
+.myop-demo-image {
+  width: 124px;
+  height: 124px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #4200B6;
+}
+
+.myop-demo-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 32px;
+  gap: 32px;
+}
+
+.myop-demo-content-inner {
+  width: 482px;
+}
+
+.myop-demo-title {
+  font-size: 60px;
+  font-weight: 500;
+  line-height: 60px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.myop-demo-subtitle {
+  font-size: 24px;
+  font-weight: 400;
+  color: #ede9fe;
+  margin-top: 22px;
+}
+
+
+.myop-demo-buttons {
+  display: flex;
+  gap: 10px;
+  height: 54px;
+}
+
+.myop-demo-buttons button {
+  font-family: "Plus Jakarta Sans";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: 0px;
+  text-align: center;
+  background: #fff;
+  color: #0A090A;
+  border: none;
+  border-radius: 2px;
+  padding: 8px 14px;
+  width: 70px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.myop-demo-buttons button:hover {
+  background: #ede9fe;
+}
