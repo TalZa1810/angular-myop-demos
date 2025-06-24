@@ -41,16 +41,16 @@ import {Component, Input, ViewEncapsulation} from '@angular/core';
         </div>
 
         <div class="content-text">
-          <h2 class="title">Nice Component!</h2>
-          <p class="subtitle">Made with Myop</p>
+          <h2 class="title">Hey! I’m an Angular Component.</h2>
+          <p class="subtitle">Push me to production with Myop</p>
         </div>
 
         <div class="buttons-container">
-          <button class="btn btn-outline">
+          <button class="btn btn-outline" myop-id="button1">
             Like it!
           </button>
 
-          <button class="btn btn-primary">
+          <button class="btn btn-primary" myop-id="button2">
             Cool
           </button>
         </div>
@@ -60,52 +60,57 @@ import {Component, Input, ViewEncapsulation} from '@angular/core';
   `,
   styles: [`
 
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+
     .component-container {
       width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
+      font-family: "DM Sans", sans-serif;
     }
 
     .component-inner-container {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 272px;
-      height: 272px;
-      justify-content: center;
-      gap: 20px;
-      border-radius: 200px;
-      background: rgb(240, 232, 255);
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 272px;
+        height: 272px;
+        justify-content: center;
+        gap: 20px;
+        border-radius: 20px;
+        border: 1px solid #3E3D3E;
     }
 
     .icons-container {
-      display: flex;
-      position: relative;
+        display: flex;
+        position: relative;
+        margin-top: 27px;
     }
 
     .icon {
-      background-color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 60px;
-      height: 60px;
-      gap: 8px;
-      flex-shrink: 0;
-      aspect-ratio: 1/1;
-      border-radius: 800px;
-      border: 1px solid black;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 57px;
+        height: 57px;
+        gap: 8px;
+        flex-shrink: 0;
+        aspect-ratio: 1/1;
+        border-radius: 800px;
+        border: 1px solid black;
     }
 
     .angular-icon {
-      margin-top: -25px;
-      margin-right: -25px;
+      margin-top: -27px;
     }
 
     .myop-icon {
       z-index: 1;
+      margin-left: -20px;
     }
 
     .angular-icon svg, .myop-icon svg {
@@ -118,24 +123,21 @@ import {Component, Input, ViewEncapsulation} from '@angular/core';
     }
 
     .title {
-      margin: 0;
-      color: #000;
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 24px;
-      font-family: "priego"!important;
-      letter-spacing: 1.5px
+        margin: 0;
+        color: #000;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 24px;
     }
 
     .subtitle {
-      margin: 4px 0 0;
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 18px;
-      color: #000;
-      font-family: "priego";
+        margin: 0;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 18px;
+        color: #000;
     }
 
     .buttons-container {
@@ -144,29 +146,31 @@ import {Component, Input, ViewEncapsulation} from '@angular/core';
     }
 
     .btn {
-      padding: 8px 16px;
-      border: 1px solid #5A595B;
-      font-size: 14px;
-      cursor: pointer;
-      transition: all 0.2s;
-      border-radius: 4px;
+        border: 1px solid #5A595B;
+        font-size: 14px;
+        cursor: pointer;
+        transition: all 0.2s;
+        border-radius: 40px;
     }
 
     .btn-outline {
-      background-color: white;
+        padding: 6px 12px;
+        background-color: white;
+        color: #0A090A;
     }
 
     .btn-outline:hover {
-      background-color: #f5f5f5;
+        background-color: #f5f5f5;
     }
 
     .btn-primary {
-      color: white;
-      background-color: #343738;
+        padding: 6px 18px;
+        color: white;
+        background-color: #343738;
     }
 
     .btn-primary:hover {
-      background-color: black;
+        background-color: black;
     }
 
 
