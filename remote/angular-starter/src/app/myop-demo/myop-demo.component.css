@@ -10,6 +10,7 @@
   align-items: stretch;
   color: #fff;
   font-family: 'Plus Jakarta Sans'; 
+  margin: auto;
 }
 
 .myop-demo-sidebar {
@@ -20,7 +21,7 @@
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
   width: 124px;
-  gap: 12px;
+  gap: 8px;
 }
 
 .myop-demo-image {
@@ -42,7 +43,8 @@
 }
 
 .myop-demo-content-inner {
-  width: 482px;
+  width: 470px;
+  margin-left: 12px;
 }
 
 .myop-demo-title {
@@ -82,6 +84,8 @@
   width: 70px;
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
+  margin-top: -4px;
+  margin-bottom: 4px;
 }
 
 .myop-demo-buttons button:hover {
