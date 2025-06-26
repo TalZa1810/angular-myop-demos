@@ -13,12 +13,14 @@ exposeAngularComponent(AppComponent, 'test-comp-1-dev', async () => {
 
 
 exposeAngularComponent(UserProfileCardComponent, 'user-card').then();
-exposeAngularComponent(DemoComponent, 'angular-demo').then();
 
-exposeAngularComponent(MyopDemoComponent, 'myop-demo').then();
+exposeAngularComponent(DemoComponent, 'angular-demo').then();
+exposeAngularComponent(MyopDemoComponent, 'angular-demo-2').then();
 
 //http://localhost:4200/src/assets/fonts/priego-regular.otf
 const style = `
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
         @font-face {
             font-family: 'priego';  /* Name you want to use for the font */
             src: url('${resolveRelativeToModule('assets/fonts/priego-regular.otf')}') format('opentype'); /* Path to the OTF file */
