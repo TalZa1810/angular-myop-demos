@@ -42,7 +42,7 @@ Follow these steps to create a Myop WebComponent from your Angular component:
 5. Define how this component connects to your host app using props and refs. <br/>
 6. If you're using a template, you can add all detected refs. Otherwise, add your own refs / props from the configuration panel.
    <img src="docs/images/add-detected-refs.png" alt="Add detected refs" width="500"><br>
-   <img src="docs/images/add-ref.png" alt="Add detected refs" width="500"><br>
+   <img src="docs/images/add-ref.png" alt="Add detected refs" width="500"><br/>
 
 
 7. Configure your component:
