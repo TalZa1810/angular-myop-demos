@@ -64,7 +64,7 @@ Follow these steps to create a Myop WebComponent from your Angular component:
      <img src="docs/images/saving.png" alt="Saving" width="300"><br/>
 
 9. The component is saved and published! You can copy the code snippet and add this to your host application. <br/>
-   <img src="docs/images/saved-component.png" alt="Saved" width="400"><br>
+   <img src="docs/images/saved-component.png" alt="Saved" width="400"><br/>
 
 
 ## Creating Flows
