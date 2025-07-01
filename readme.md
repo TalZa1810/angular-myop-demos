@@ -61,7 +61,7 @@ Follow these steps to create a Myop WebComponent from your Angular component:
    - If you want to save the component, click on the "Save" button
    - If you want to attach the component to an existing "Flow", Click on the ChevronDown button to search for the relevant flow
    - If you want to attach the component to a new flow, click on the (after the component itself was already saved). <br/>
-     <img src="docs/images/saving.png" alt="Saving" width="300"><br>
+     <img src="docs/images/saving.png" alt="Saving" width="300"><br/>
 
 9. The component is saved and published! You can copy the code snippet and add this to your host application. <br/>
    <img src="docs/images/saved-component.png" alt="Saved" width="400"><br>
