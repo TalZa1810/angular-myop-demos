@@ -37,7 +37,7 @@ Follow these steps to create a Myop WebComponent from your Angular component:
 2. To create a new component using a predefined template, click on the "Use sample component" button.
 3. To create a new component from scratch, click on the "Create from scratch" button.
 4. Choose Angular loader type <br/>
-   <img src="docs/images/loader-selection.png" alt="Loader Selection" width="500"><br>
+   <img src="docs/images/loader-selection.png" alt="Loader Selection" width="500"><br/>
 
 5. Define how this component connects to your host app using props and refs. <br/>
 6. If you're using a template, you can add all detected refs. Otherwise, add your own refs / props from the configuration panel.
