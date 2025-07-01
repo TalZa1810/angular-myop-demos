@@ -52,7 +52,7 @@ Follow these steps to create a Myop WebComponent from your Angular component:
    - Click on the "view source code" button to view the React code example .
    - Click on the "Set to default" to set the relevant variant as the default one.
    - Click on the Delete button to delete a variant. <br/>
-     <img src="docs/images/variants-section.png" alt="Variants Section" width="600" height="100"><br>
+     <img src="docs/images/variants-section.png" alt="Variants Section" width="600" height="100"><br/>
 
 
 **Note:** The GUID in the browser URL is the `componentId` that you'll need later
