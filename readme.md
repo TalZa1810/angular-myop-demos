@@ -29,7 +29,7 @@ exposeAngularComponent(AppComponent, 'test-comp-1', async () => {
 
 ## Creating Myop WebComponents
 
-Follow these steps to create a Myop WebComponent from your react component:
+Follow these steps to create a Myop WebComponent from your Angular component:
 
 1. Open the Myop dashboard at [https://dashboard.myop.dev](https://dashboard.myop.dev) <br>
    <img src="docs/images/dashboard.png" alt="Dashboard" width="500"><br>
